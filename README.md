@@ -10,7 +10,7 @@ npm i @vexxlol/interactions
 ```
 
 ### Example
-This example is written in TypeScript and is easily changeable to JavaScript. View our examples [here](https://VexApp/interactionslib/tree/main/examples).
+This example is written in TypeScript and is easily changeable to JavaScript. View our examples [here](https://github.com/VexApp/interactionslib/tree/main/examples).
 ```ts
 import { Server, Interaction, EmbedBuilder } from "@vexxlol/interactions"
 

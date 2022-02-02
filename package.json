@@ -1,6 +1,6 @@
 {
   "name": "@vexxlol/interactions",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Public library for using discord HTTP interactions. Written in 100% TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -1,7 +1,7 @@
 /* local files */
-import { Settings } from "../types/server";
-import { Interaction } from "./interaction";
-import { Callback } from "../interface/callback";
+import { Settings } from "../types/Server";
+import { Interaction } from "./Interaction";
+import { Callback } from "../interface/Callback";
 
 
 /* 3rd party modules */
@@ -56,12 +56,11 @@ export class Server {
                     break;
 
                 case 3:
-                    // Message component
-                    this.emit('message_component', (req.body, res));
+                    this.emit('interaction', (new Interaction(req, res)));
                     break;
 
                 case 4:
-                    this.emit('autocomplete', (req.body, res));
+                    // this.emit('autocomplete', (req.body, res));
                     // Application command autocomplete
                     break;
             

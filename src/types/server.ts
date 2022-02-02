@@ -1,4 +1,4 @@
 export type Settings = {
-    port: number
+    port?: number
     publicKey: string
 }

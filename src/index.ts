@@ -1,3 +1,3 @@
-export * from "./structs/server"
-export * from "./structs/builders"
-export * from "./structs/interaction"
+export * from "./structs/Server"
+export * from "./structs/Builders"
+export * from "./structs/Interaction"

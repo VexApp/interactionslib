@@ -1,3 +1,3 @@
 export interface Callback {
-    (data?: any): void;   
+    (data?: any, res?: any): void;   
 }

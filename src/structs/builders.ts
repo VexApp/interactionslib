@@ -1,4 +1,4 @@
-import { Embed, EmbedAuthor, EmbedField, EmbedFooter, EmbedImage } from "../types/discord";
+import { Embed, EmbedAuthor, EmbedField, EmbedFooter, EmbedImage } from "../types/Discord";
 
 export class EmbedBuilder {
     private _title: string = ""; // Done

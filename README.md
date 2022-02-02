@@ -12,37 +12,38 @@ npm i @vexxlol/interactions
 ### Example
 This example is written in TypeScript and is easily changeable to JavaScript. View our examples [here](https://github.com/VexApp/interactionslib/tree/main/examples).
 ```ts
-import { Server, Interaction, EmbedBuilder } from "@vexxlol/interactions"
+import { Server, Interaction } from "../index";
 
 let server = new Server({
-    port: 4000, // This is optional and will default to port 4000.
-    publicKey: "APPLICATION PUBLIC KEY" // Your public key can be found here https://discord.com/developers/applications
-});
+    publicKey: "PUBLIC KEY" // Can be found at discord.com/developers/applications
+})
 
-server.on('interaction', (interaction: Interaction) => {
-    if (interaction.data.name == "ping") {
-        interaction.reply("Pong! :ping_pong:"); // You can send a plain message or embeds
+server.on("interaction", (interaction: Interaction) => {
+    if (interaction.isSlashCommand()) {
+        interaction.data.reply("test");
     }
 
-    if (interaction.data.name == "hello") {
-        let embed = new EmbedBuilder();
-        embed.title("Hello!")
-        embed.description(`Hello, ${interaction.member.user.username}!`);
-        embed.colour(0xFFFFFF);
-
-
-        interaction.reply({ embeds: [embed.build], flags: 1<<6 }) // Embeds are passed as an array within object, and you can pass message flags, in this case this message will be ephremal. 
+    if (interaction.isButton()) {
+        interaction.data.reply({ content: `Hello, ${interaction.data.member.user.username}.`, flags: 1<<6 })
     }
 })
 
-// There also is two other events which are not officially support but work.
-// sever.on('autocomplete' (data, res)) & server.on('message_component', (data, res))
-// data returns the json sent from discord, and res is an response class created by express if you want to implement these interactions.
-
 server.start();
+```
+If you run the script, only the local network will be able to access the HTTP Interactions, you will need to tunnel the server. This can be done numerous ways, below is with [ngrok](https://ngrok.com/).
+```shell
+ngrok http 4000 # change the port respective of what you chose
 ```
 
 
 ### Docs
 Will make it later.
 
+
+## Todo
+[x] Support buttons
+[ ] Support autocomplete
+[ ] Make docs
+[ ] Error system
+[ ] Register slash commands system
+[ ] Ability to connect to a DJS bot and/or custom client
